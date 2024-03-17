@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            text-align: center;
+            border-radius: 25px;
+            background:color(srgb red green blue),
+            
+        }
+
+    </style>
+    
+</head>
+<body>
+    <form action="{% url 'home' %}" method="POST">
+{% csrf_token %}
+<table>S.No:</table>
+<input type="number" name="s_no"><br>
+<table>NAME:</table>
+<input type="text" name="name"><br>
+<table>EMAIL:</table>
+<input type="text" name="mail"><br>
+<table>COURSE:</table>
+<input type="text" name="course"><br>
+<input type="submit">
+
+    </form>
+    <a href="{% url 'show' %}">view</a>
+</body>
+</html>

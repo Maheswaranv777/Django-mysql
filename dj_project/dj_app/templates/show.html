@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <style>
+        table,td,th,tr{
+            border:5px solid blue;
+            padding:10px;
+            border-collapse: collapse;
+        }
+        
+        table{
+            width:40%;
+            margin:10%;
+
+
+
+
+
+        }
+
+
+
+        
+    </style>
+</head>
+<body style="background-image:url('{% static 'img/img.jpg' %}');background-repeat:no-repeat;background-size:100%;">
+    <table>
+        <tr>
+            <td>s_no</td>
+            <td>name</td>
+            <td>email</td>
+            <td>course</td>
+
+        </tr>
+        
+{% for i in result %}
+<tr>
+    <td>{{i.s_no}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.course}}</td>
+    <th><a href="{% url 'update' i.s_no %}">update</a></th>
+    <th><a href="{% url 'delete' i.s_no %}">delete</a></th>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
